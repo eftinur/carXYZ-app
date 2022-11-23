@@ -1,0 +1,26 @@
+.menu li a {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.menu li a:hover {
+    text-decoration: underline;
+    background: none;
+    border-radius: 8px;
+}
+
+.menu li a:active {
+    text-decoration: underline;
+    background: none;
+    border-radius: 8px;
+}
+
+.header__logo {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 4px;
+}
