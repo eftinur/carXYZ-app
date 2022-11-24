@@ -5,27 +5,27 @@
     height: 90vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-wrap: wrap;
 }
 
 .banner h1 {
-    font-family: 'Syncopate', sans-serif;
+    font-family: 'Krona One', sans-serif;
     font-size: 60px;
     font-weight: 700;
     color: #fff;
 }
 
 .banner p {
-    font-family: 'Open sans', sans-serif;
+    font-family: 'Exo 2', sans-serif;
     font-size: 22px;
     font-weight: 400;
     color: #fff;
 }
 
 .btn {
-    font-family: 'Open sans', sans-serif;
+    font-family: 'Exo 2', sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: #fff;

@@ -1,26 +1,27 @@
 .menu li a {
-    font-family: 'Syncopate', sans-serif;
-    font-size: 14px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
     font-weight: 400;
-    color: #fff;
+    color: #000;
+    text-transform: uppercase;
 }
 
 .menu li a:hover {
     text-decoration: underline;
     background: none;
-    border-radius: 8px;
+    background-color: transparent;
 }
 
-.menu li a:active {
-    text-decoration: underline;
+.menu li a:focus {
     background: none;
-    border-radius: 8px;
+    background-color: transparent;
+
 }
 
 .header__logo {
-    font-family: 'Syncopate', sans-serif;
+    font-family: 'Krona One', sans-serif;
     font-size: 24px;
     font-weight: 400;
-    color: #fff;
+    color: #000;
     letter-spacing: 4px;
 }

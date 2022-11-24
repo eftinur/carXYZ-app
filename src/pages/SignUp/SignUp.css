@@ -1,0 +1,12 @@
+form {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+
+.register-title {
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase;
+
+}
