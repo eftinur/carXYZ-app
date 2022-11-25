@@ -1,0 +1,92 @@
+[
+    {
+        "category": "toyota",
+        "name": "Toyota Mark II",
+        "image": "https://i.ibb.co/LgVCtDc/toyota-03.jpg",
+        "location": "Dhaka",
+        "original": 3000,
+        "resale": "2200",
+        "usedFor": "4",
+        "date": "Nov 23, 2022, 3:07:02 AM"
+    },
+    {
+        "category": "toyota",
+        "name": "Toyota Camry",
+        "image": "https://i.ibb.co/ctc5NFp/toyota-02.jpg",
+        "location": "CTG",
+        "original": 3200,
+        "resale": "2300",
+        "usedFor": "7",
+        "date": "Nov 24, 2022, 1:10:11 AM"
+    },
+    {
+        "category": "toyota",
+        "name": "Toyota Sequoia",
+        "image": "https://i.ibb.co/cCJ6Hvh/toyota-01.jpg",
+        "location": "CTG",
+        "original": 4000,
+        "resale": "3000",
+        "usedFor": "3",
+        "date": "Nov 25, 2022, 12:07:02 AM"
+    },
+    {
+        "category": "porsche",
+        "name": "Porsche 944",
+        "image": "https://i.ibb.co/Z8XH32p/porsche-02.jpg",
+        "location": "Barisal",
+        "original": 7000,
+        "resale": "5000",
+        "usedFor": "4",
+        "date": "Nov 12, 2022, 12:07:02 AM"
+    },
+    {
+        "category": "porsche",
+        "name": "Porsche Boxster",
+        "image": "https://i.ibb.co/mJgNNHz/porsche-01.jpg",
+        "location": "CTG",
+        "original": 5000,
+        "resale": "4000",
+        "usedFor": "7",
+        "date": "Nov 17, 2022, 3:06:02 AM"
+    },
+    {
+        "category": "porsche",
+        "name": "Porsche Boxster E",
+        "image": "https://i.ibb.co/99XdLvs/porsche-03.jpg",
+        "location": "Rajshahi",
+        "original": 11000,
+        "resale": "7000",
+        "usedFor": "2",
+        "date": "Nov 23, 2022, 1:11:02 AM"
+    },
+    {
+        "category": "honda",
+        "name": "Honda Accord",
+        "image": "https://i.ibb.co/XtLnrNv/honda-01.jpg",
+        "location": "CTG",
+        "original": 2000,
+        "resale": "1500",
+        "usedFor": "6",
+        "date": "Nov 2, 2022, 9:42:02 AM"
+    },
+    {
+        "category": "honda",
+        "name": "Honda Civic",
+        "image": "https://i.ibb.co/9WM65T0/honda-02.jpg",
+        "location": "Dhaka",
+        "original": 35000,
+        "resale": "3000",
+        "usedFor": "4",
+        "date": "Nov 7, 2022, 11:00:02 AM"
+    },
+    {
+        "category": "honda",
+        "name": "Honda Prelude",
+        "image": "https://i.ibb.co/bXFGLDT/honda-03.jpg",
+        "location": "Khulna",
+        "original": 5000,
+        "resale": "4000",
+        "usedFor": "9",
+        "date": "Nov 14, 2022, 4:52:02 AM"
+    }
+]

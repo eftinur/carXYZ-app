@@ -3,7 +3,7 @@
     font-size: 16px;
     font-weight: 400;
     color: #000;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .menu li a:hover {

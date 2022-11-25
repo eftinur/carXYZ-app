@@ -5,13 +5,13 @@ import './About.css';
 
 const About = () => {
   return (
-    <div className="sm:container md:container lg:container mx-auto my-8 md:flex justify-between gap-10">
-      <div className="w-3/4 mx-auto md:w-2/4">
-        <img className="shadow-2xl" src={about__01} alt="" />
+    <div className="sm:container md:container lg:container mx-auto my-16 md:flex justify-between gap-10">
+      <div className="w-3/4 mx-auto md:w-2/4 flex justify-start">
+        <img className="shadow-2xl w-3/4" src={about__01} alt="" />
       </div>
       <div className="about-brief w-3/4 mx-auto md:w-2/4 mt-4">
         <div className="hidden lg:block">
-            <img className="shadow-2xl" src={about__02} alt="" />
+            <img className="shadow-2xl w-full" src={about__02} alt="" />
         </div>
         <div className="">
             <h3>About us</h3>

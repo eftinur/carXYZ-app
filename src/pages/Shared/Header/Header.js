@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import "./Header.css";
@@ -22,9 +22,11 @@ const Header = () => {
         <Link to="/home">Home</Link>
       </li>
       <li>
+        <Link to="/items">Advertise items</Link>
+      </li>
+      <li>
         <Link to="blogs">Blogs</Link>
       </li>
-
       {user ? (
         <>
           <li>
@@ -45,6 +47,7 @@ const Header = () => {
       )}
     </>
   );
+  
   return (
     <>
       <div className="navbar container mx-auto justify-between">
