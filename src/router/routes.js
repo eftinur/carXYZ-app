@@ -1,4 +1,4 @@
-import CategoryDetails from "../pages/CategoryDetails/CategoryDetails";
+import CategoryCards from "../pages/Home/Catagories/CategoryCards";
 import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
 
@@ -20,9 +20,11 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: '/cars/:id',
-                element: <CategoryDetails />,
-                loader: ({params}) => fetch(`http://localhost:5000/cars/${params.id}`)
+                path: '/categories/:category',
+                element: <CategoryCards />,
+                loader: ({params}) => {
+                    return fetch(`http://localhost:5000/categories/${params.category}`)
+                }
             },
             {
                 path: '/signup',

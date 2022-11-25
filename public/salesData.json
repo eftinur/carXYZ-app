@@ -1,92 +1,109 @@
 [
     {
         "category": "toyota",
+        "seller": "masuk",
         "name": "Toyota Mark II",
         "image": "https://i.ibb.co/LgVCtDc/toyota-03.jpg",
         "location": "Dhaka",
-        "original": 3000,
-        "resale": "2200",
-        "usedFor": "4",
+        "showroomPrice": 3000,
+        "resalePrice": "2200",
+        "carUsed": "4",
         "date": "Nov 23, 2022, 3:07:02 AM"
     },
+
     {
         "category": "toyota",
+        "seller": "masuk",
         "name": "Toyota Camry",
         "image": "https://i.ibb.co/ctc5NFp/toyota-02.jpg",
         "location": "CTG",
-        "original": 3200,
-        "resale": "2300",
-        "usedFor": "7",
+        "showroomPrice": 3200,
+        "resalePrice": "2300",
+        "carUsed": "7",
         "date": "Nov 24, 2022, 1:10:11 AM"
     },
+
     {
         "category": "toyota",
+        "seller": "masuk",
         "name": "Toyota Sequoia",
         "image": "https://i.ibb.co/cCJ6Hvh/toyota-01.jpg",
         "location": "CTG",
-        "original": 4000,
-        "resale": "3000",
-        "usedFor": "3",
+        "showroomPrice": 4000,
+        "resalePrice": "3000",
+        "carUsed": "3",
         "date": "Nov 25, 2022, 12:07:02 AM"
     },
+
     {
         "category": "porsche",
+        "seller": "samsu",
         "name": "Porsche 944",
         "image": "https://i.ibb.co/Z8XH32p/porsche-02.jpg",
         "location": "Barisal",
-        "original": 7000,
-        "resale": "5000",
-        "usedFor": "4",
+        "showroomPrice": 7000,
+        "resalePrice": "5000",
+        "carUsed": "4",
         "date": "Nov 12, 2022, 12:07:02 AM"
     },
+
     {
         "category": "porsche",
+        "seller": "samsu",
         "name": "Porsche Boxster",
         "image": "https://i.ibb.co/mJgNNHz/porsche-01.jpg",
         "location": "CTG",
-        "original": 5000,
-        "resale": "4000",
-        "usedFor": "7",
+        "showroomPrice": 5000,
+        "resalePrice": "4000",
+        "carUsed": "7",
         "date": "Nov 17, 2022, 3:06:02 AM"
     },
+
     {
         "category": "porsche",
+        "seller": "samsu",
         "name": "Porsche Boxster E",
         "image": "https://i.ibb.co/99XdLvs/porsche-03.jpg",
         "location": "Rajshahi",
-        "original": 11000,
-        "resale": "7000",
-        "usedFor": "2",
+        "showroomPrice": 11000,
+        "resalePrice": "7000",
+        "carUsed": "2",
         "date": "Nov 23, 2022, 1:11:02 AM"
     },
+
     {
         "category": "honda",
+        "seller": "sung",
         "name": "Honda Accord",
         "image": "https://i.ibb.co/XtLnrNv/honda-01.jpg",
         "location": "CTG",
-        "original": 2000,
-        "resale": "1500",
-        "usedFor": "6",
+        "showroomPrice": 2000,
+        "resalePrice": "1500",
+        "carUsed": "6",
         "date": "Nov 2, 2022, 9:42:02 AM"
     },
+
     {
         "category": "honda",
+        "seller": "sung",
         "name": "Honda Civic",
         "image": "https://i.ibb.co/9WM65T0/honda-02.jpg",
         "location": "Dhaka",
-        "original": 35000,
-        "resale": "3000",
-        "usedFor": "4",
+        "showroomPrice": 35000,
+        "resalePrice": "3000",
+        "carUsed": "4",
         "date": "Nov 7, 2022, 11:00:02 AM"
     },
+
     {
         "category": "honda",
+        "seller": "sung",
         "name": "Honda Prelude",
         "image": "https://i.ibb.co/bXFGLDT/honda-03.jpg",
         "location": "Khulna",
-        "original": 5000,
-        "resale": "4000",
-        "usedFor": "9",
+        "showroomPrice": 5000,
+        "resalePrice": "4000",
+        "carUsed": "9",
         "date": "Nov 14, 2022, 4:52:02 AM"
     }
 ]

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CarsCard from "./CarsCard";
+import { Link } from 'react-router-dom';
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -27,13 +27,10 @@ const Categories = () => {
       <div className="flex justify-start">
         <h4>Pick Your category:</h4>
         {categories.map((category) => (
-          <button className="btn mx-8">{category.category}</button>
+          <button key={category._id} className="btn mx-8"><Link to={`/categories/${category.category}`}>{category.category}</Link></button>
         ))}
       </div>
-      <div className="grid grid-cols-3 gap-10 my-12">
-        {cars.map((car) => (
-          <CarsCard key={car._id} car={car}></CarsCard>
-        ))}
+      <div>
       </div>
     </section>
   );

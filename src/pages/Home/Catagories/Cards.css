@@ -1,0 +1,17 @@
+.card-body {
+    font-family: 'Exo 2', sans-serif;
+
+}
+
+.card-body h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.seller__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
