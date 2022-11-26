@@ -1,3 +1,4 @@
+import Blogs from "../pages/Blogs/Blogs";
 import CategoryCards from "../pages/Home/Catagories/CategoryCards";
 import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
                 loader: ({params}) => {
                     return fetch(`http://localhost:5000/categories/${params.category}`)
                 }
+            },
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
             },
             {
                 path: '/signup',

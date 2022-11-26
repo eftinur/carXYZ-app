@@ -25,7 +25,7 @@ const Header = () => {
         <Link to="/items">Advertise items</Link>
       </li>
       <li>
-        <Link to="blogs">Blogs</Link>
+        <Link to="/blogs">Blogs</Link>
       </li>
       {user ? (
         <>
