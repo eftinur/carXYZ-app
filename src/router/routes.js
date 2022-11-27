@@ -1,4 +1,8 @@
+import DashLayout from "../layout/DashLayout";
 import Blogs from "../pages/Blogs/Blogs";
+import AddACar from "../pages/Dashboard/AddACar/AddACar";
+import AllSellers from "../pages/Dashboard/AllSellers/AllSellers";
+import MyOrders from "../pages/Dashboard/MyOrders/MyOrders";
 import CategoryCards from "../pages/Home/Catagories/CategoryCards";
 import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
@@ -40,6 +44,24 @@ const router = createBrowserRouter([
                 path: '/signin',
                 element: <SignIn />
             },
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <DashLayout></DashLayout>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/dashboard/allsellers',
+                element: <AllSellers></AllSellers>
+            },
+            {
+                path: '/dashboard/addacar',
+                element: <AddACar></AddACar>
+            }
         ]
     }
 ])
