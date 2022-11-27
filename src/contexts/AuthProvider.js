@@ -3,8 +3,10 @@ import app from '../firebase/firebase.config';
 import {
     createUserWithEmailAndPassword,
     getAuth,
+    GoogleAuthProvider,
     onAuthStateChanged,
     signInWithEmailAndPassword,
+    signInWithPopup,
     signOut,
     updateProfile
 } from 'firebase/auth';
@@ -14,18 +16,18 @@ const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loader, setLoader] = useState(true);
 
     // creating user
     const createUser = (email, password) => {
-        setLoading(true);
+        setLoader(true);
         return createUserWithEmailAndPassword(auth, email,password);
     }
 
     useEffect( () => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            setLoading(false);
+            setLoader(false);
         })
         return () => {
             unsubscribe();
@@ -34,7 +36,7 @@ const AuthProvider = ({children}) => {
 
     // updating user info
     const updateUserInfo = (name, photo) => {
-        setLoading(true);
+        setLoader(true);
         return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photo
@@ -43,24 +45,32 @@ const AuthProvider = ({children}) => {
 
     // signing user
     const signIn = (email, password) => {
-        setLoading(true);
+        setLoader(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     const logOut = () => {
-        setLoading(true);
+        setLoader(true);
         localStorage.removeItem('accessToken');
         return signOut(auth);
     }
 
+    const googleProvider = new  GoogleAuthProvider();
+
+    const googleSignIn = () => {
+        setLoader(true);
+        return signInWithPopup(auth, googleProvider);
+    }
+
     const value = {
         user,
-        loading,
-        setLoading,
+        loader,
+        setLoader,
         createUser,
         updateUserInfo,
         signIn,
-        logOut
+        logOut,
+        googleSignIn
     }
     return (
         <div>

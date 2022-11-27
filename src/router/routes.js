@@ -2,6 +2,7 @@ import Blogs from "../pages/Blogs/Blogs";
 import CategoryCards from "../pages/Home/Catagories/CategoryCards";
 import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../layout/Main");
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/categories/:category',
-                element: <CategoryCards />,
+                element: <PrivateRoute><CategoryCards /></PrivateRoute>,
                 loader: ({params}) => {
                     return fetch(`http://localhost:5000/categories/${params.category}`)
                 }

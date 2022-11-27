@@ -18,10 +18,7 @@ const CategoryCards = () => {
       return data;
     },
   });
-  if (isLoading) {
-    return <div className="w-1/4 mx-auto text-center">Loading...</div>;
-  }
-  console.log(cars);
+
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto my-20">

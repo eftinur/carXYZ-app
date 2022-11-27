@@ -1,8 +1,15 @@
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { AuthContext } from "../../../../contexts/AuthProvider";
 
 const BookingModal = ({ car }) => {
   const { user } = useContext(AuthContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Sup')
+    toast.success('Order placed successfully')
+  }
 
   return (
     <>
@@ -13,13 +20,13 @@ const BookingModal = ({ car }) => {
           <h3 className="font-bold text-lg">
             Congratulations random Internet user!
           </h3>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name:</span>
               </label>
               <input
-                defaultValue={user.displayName}
+                defaultValue={user?.displayName}
                 readOnly
                 name="name"
                 type="text"
@@ -32,7 +39,7 @@ const BookingModal = ({ car }) => {
                 <span className="label-text">Email:</span>
               </label>
               <input
-                defaultValue={user.email}
+                defaultValue={user?.email}
                 readOnly
                 name="name"
                 type="text"
@@ -93,15 +100,17 @@ const BookingModal = ({ car }) => {
                 />
               </div>
             </div>
-          </form>
-          <div className="modal-action">
+            <div className="modal-action">              
+            <button className="btn btn-primary btn-outline capitalize">Buy now</button>
             <label
               htmlFor="booking-modal"
               className="btn btn-primary btn-outline capitalize"
             >
-              Buy now
+              Close
             </label>
           </div>
+          </form>
+         
         </div>
       </div>
     </>
