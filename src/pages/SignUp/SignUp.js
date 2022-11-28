@@ -5,8 +5,7 @@ import "./SignUp.css";
 import { toast } from "react-hot-toast";
 
 const SignUp = () => {
-  const { loading, setLoading, createUser, updateUserInfo } =
-    useContext(AuthContext);
+  const { loading, setLoading, createUser, updateUserInfo } = useContext(AuthContext);
   const [error, setError] = useState("");
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
@@ -20,7 +19,7 @@ const SignUp = () => {
     const image = form.image.files[0];
     const email = form.email.value;
     const password = form.password.value;
-    const accountType = form.account.value;
+    const accountType = (form.account.value).toLowerCase();
 
     console.log(name, image, email, password, accountType);
 
@@ -43,10 +42,11 @@ const SignUp = () => {
         createUser(email, password)
           .then((result) => {
             const user = result.user;
-            saveUseInDB(name, email, accountType);
             console.log(user);
+            saveUserInDB(name, email, accountType);
             updateUserInfo(name, imageData.data.display_url)
-              .then(() => {})
+              .then(() => {
+              })
               .catch((err) => {
                 console.log(err);
               });
@@ -63,33 +63,23 @@ const SignUp = () => {
       });
   };
 
-  const saveUseInDB = (name, email, accountType) => {
+  const saveUserInDB = (name, email, accountType) => {
     const user = { name, email, accountType };
     fetch('http://localhost:5000/users', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        "content-type": "application/json"
       },
       body: JSON.stringify(user)
     })
     .then(res => res.json())
     .then(data => {
       console.log('inside saveUserInDB', data);
-      getUserToken(email);
       navigate(from, {replace: true})
     })
   }
 
-  const getUserToken = (email) => {
-    fetch(`http://localhost:5000/token?email=${email}`)
-    .then(res => res.json())
-    .then(data => {
-      if(data.accessToken) {
-        localStorage.setItem('accessToken', data.accessToken)
-        navigate(from, {replace: true});
-      }
-    })
-  }
+
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col  sm:w-3/4 md:w-2/4 lg:w-2/4 xl:w-1/4">
@@ -156,7 +146,7 @@ const SignUp = () => {
               </label>
               <select name="account" className="select select-bordered w-full">
                 <option>Seller</option>
-                <option selected>Buyer</option>
+                <option>Buyer</option>
               </select>
             </div>
             <div className="login-toggle">

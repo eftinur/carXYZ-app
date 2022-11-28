@@ -7,8 +7,17 @@ const BookingModal = ({ car }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Sup')
-    toast.success('Order placed successfully')
+    
+    const form = e.target;
+    const name =  form.name.value;
+    const email = form.email.value;
+    const carName = form.carName.value;
+    const price = form.price.value;
+    const phone = form.phone.value;
+    const location = form.location.value;
+    console.log(name, email, carName, price, phone, location);
+    
+    toast.success('Order booked successfully')
   }
 
   return (
@@ -41,7 +50,7 @@ const BookingModal = ({ car }) => {
               <input
                 defaultValue={user?.email}
                 readOnly
-                name="name"
+                name="email"
                 type="text"
                 className="input input-bordered"
                 required
@@ -54,7 +63,7 @@ const BookingModal = ({ car }) => {
               <input
                 defaultValue={car?.name}
                 readOnly
-                name="name"
+                name="carName"
                 type="text"
                 className="input input-bordered"
                 required
@@ -67,7 +76,7 @@ const BookingModal = ({ car }) => {
               <input
                 defaultValue={car?.resalePrice}
                 readOnly
-                name="name"
+                name="price"
                 type="text"
                 placeholder="Enter your email"
                 className="input input-bordered"
@@ -80,7 +89,7 @@ const BookingModal = ({ car }) => {
                   <span className="label-text">Phone no.</span>
                 </label>
                 <input
-                  name="name"
+                  name="phone"
                   type="number"
                   placeholder="Enter your cell phone no."
                   className="input input-bordered"
@@ -92,7 +101,7 @@ const BookingModal = ({ car }) => {
                   <span className="label-text">Meeting location:</span>
                 </label>
                 <input
-                  name="name"
+                  name="location"
                   type="text"
                   placeholder="Enter your location"
                   className="input input-bordered"

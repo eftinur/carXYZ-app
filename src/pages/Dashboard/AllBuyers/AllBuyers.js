@@ -1,9 +1,9 @@
 import React from "react";
 
-const AllSellers = () => {
+const AllBuyers = () => {
   return (
     <div>
-      <h3 className="text-3xl">All Sellers:</h3>
+      <h3 className="text-3xl">All Buyers:</h3>
 
       <div className="overflow-x-auto mt-6">
         <table className="table w-full">
@@ -27,4 +27,4 @@ const AllSellers = () => {
   );
 };
 
-export default AllSellers;
+export default AllBuyers;

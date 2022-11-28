@@ -33,7 +33,7 @@ const SignIn = () => {
   };
 
   const handleGoogleSignIn = () => {
-    const accountType = "Buyer";
+    const accountType = "buyer";
     googleSignIn()
       .then((result) => {
         const user = result.user;
