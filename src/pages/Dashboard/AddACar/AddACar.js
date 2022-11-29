@@ -1,10 +1,24 @@
 import React from "react";
 
 const AddACar = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const carName = e.target.name.value; 
+    const price = e.target.price.value; 
+    const phone = e.target.phone.value; 
+    const location = e.target.location.value; 
+    const year = e.target.year.value; 
+    const condition = e.target.condition.value; 
+    const category = (e.target.category.value).toLowerCase();; 
+    const description = e.target.description.value;
+    
+    console.log(carName, price, phone, location, year, condition, category, description);
+  }
   return (
     <div className="w-2/4">
       <h3 className="text-3xl">Add new car</h3>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Car Name:</span>
@@ -85,7 +99,7 @@ const AddACar = () => {
           <label className="label">
             <span className="label-text">Car category:</span>
           </label>
-          <select name="condition" className="select select-bordered w-full">
+          <select name="category" className="select select-bordered w-full">
             <option>Toyota</option>
             <option>Porsche</option>
             <option>Honda</option>
@@ -103,6 +117,7 @@ const AddACar = () => {
             className="input input-bordered w-full"
           />
         </div>
+        <button className="btn btn-primary btn-outline mt-6">Submit</button>
       </form>
     </div>
   );

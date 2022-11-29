@@ -75,10 +75,20 @@ const SignUp = () => {
     .then(res => res.json())
     .then(data => {
       console.log('inside saveUserInDB', data);
+      getUserToken(email);
       navigate(from, {replace: true})
     })
   }
-
+  
+  const getUserToken = (email) => {
+    fetch(`http://localhost:5000/token?email=${email}`)
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.accessToken) {
+        localStorage.setItem("accessToken", data.accessToken);
+      }
+    });
+  }
 
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -146,7 +156,7 @@ const SignUp = () => {
               </label>
               <select name="account" className="select select-bordered w-full">
                 <option>Seller</option>
-                <option>Buyer</option>
+                <option selected>Buyer</option>
               </select>
             </div>
             <div className="login-toggle">

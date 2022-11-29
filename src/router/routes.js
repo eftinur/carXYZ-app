@@ -5,6 +5,7 @@ import AllBuyers from "../pages/Dashboard/AllBuyers/AllBuyers";
 import AllSellers from "../pages/Dashboard/AllSellers/AllSellers";
 import MyOrders from "../pages/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../pages/Dashboard/MyProducts/MyProducts";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import CategoryCards from "../pages/Home/Catagories/CategoryCards";
 import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
                 element: <AllBuyers></AllBuyers>
             }
         ]
+    },
+    {
+        path: "*",
+        element: <ErrorPage></ErrorPage>
     }
 ])
 

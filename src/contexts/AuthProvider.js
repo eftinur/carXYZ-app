@@ -35,12 +35,9 @@ const AuthProvider = ({children}) => {
     })
 
     // updating user info
-    const updateUserInfo = (name, photo) => {
+    const updateUserInfo = (profile) => {
         setLoader(true);
-        return updateProfile(auth.currentUser, {
-            displayName: name,
-            photoURL: photo
-        });
+        return updateProfile(auth.currentUser, profile)
     }
 
     // signing user

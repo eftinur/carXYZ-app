@@ -12,16 +12,6 @@ const Categories = () => {
       });
   }, []);
 
-  const [cars, setCars] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/cars")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setCars(data);
-      });
-  }, []);
-  console.log(cars);
   return (
     <section className="container mx-auto my-28">
       <div className="flex justify-start flex-wrap">

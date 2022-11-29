@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import "./Header.css";
 
 const Header = () => {
-  const { user, loader, logOut } = useContext(AuthContext);
-  console.log(user, loader);
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 
   const handleSignOut = () => {
     logOut()
@@ -20,9 +20,6 @@ const Header = () => {
     <>
       <li>
         <Link to="/home">Home</Link>
-      </li>
-      <li>
-        <Link to="/items">Advertise items</Link>
       </li>
       <li>
         <Link to="/blogs">Blogs</Link>
@@ -44,7 +41,7 @@ const Header = () => {
       ) : (
         <>
           <li>
-            <Link to="signin">Sign in</Link>
+            <Link to="/signin">Sign in</Link>
           </li>
         </>
       )}
@@ -52,7 +49,7 @@ const Header = () => {
   );
   
   return (
-    <div className="navbar bg-base-300 rounded-md">
+    <div className="navbar bg-slate-700">
       <div className="container mx-auto justify-between  px-6">
         <div className="navbar-start">
           <div className="dropdown">
