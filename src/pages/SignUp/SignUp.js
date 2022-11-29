@@ -43,9 +43,9 @@ const SignUp = () => {
           .then((result) => {
             const user = result.user;
             console.log(user);
-            saveUserInDB(name, email, accountType);
             updateUserInfo(name, imageData.data.display_url)
               .then(() => {
+                saveUserInDB(name, email, accountType);
               })
               .catch((err) => {
                 console.log(err);

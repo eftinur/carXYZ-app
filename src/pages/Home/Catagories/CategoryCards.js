@@ -10,7 +10,7 @@ const CategoryCards = () => {
 
 
   const url = `http://localhost:5000/cars?category=${category.category}`;
-  const { data: cars = [] } = useQuery({
+  const { data: cars = [], isLoading } = useQuery({
     queryKey: ["cars", category?.category],
     queryFn: async () => {
       const res = await fetch(url);

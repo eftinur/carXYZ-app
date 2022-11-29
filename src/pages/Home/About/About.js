@@ -15,7 +15,7 @@ const About = () => {
         </div>
         <div className="">
             <h3>About us</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos delectus tempora sit unde ducimus labore, totam quisquam veniam deserunt, quo veritatis nesciunt molestias voluptatibus dignissimos adipisci pariatur voluptas deleniti repellat similique repudiandae iusto! Incidunt ipsa placeat soluta reprehenderit aliquid. Provident?</p>
+            <p>Car Carriage is owned by OzCar Connect Pty Ltd. Our website www.Car Carriage advertises private vehicles and vehicles owned by OzCar PTY LTD which is a licensed motor dealer. OzCar LMCT 11839. Private vehicles listed for sale on this website are not part of and are not guaranteed by OzCar PTY LTD, they are listed for sale by a private 3rd party. *All Finance Subject to Approved Purchasers. ^^Terms and conditions apply. All sales and promotions are excluded from Muswellbrook Dealership.</p>
         </div>
       </div>
     </div>

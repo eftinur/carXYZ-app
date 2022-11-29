@@ -1,8 +1,9 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
+import Spinner from "../../../Spinner/Spinner";
 
 const AllBuyers = () => {
-  const { data, refetch } = useQuery({
+  const { data, refetch, isLoading } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
       const res = await fetch("http://localhost:5000/users?type=buyer");
@@ -22,6 +23,10 @@ const AllBuyers = () => {
       refetch();
     })
   }
+
+  if(isLoading) {
+    return <Spinner></Spinner>
+  }
   return (
     <div>
       <h3 className="text-3xl">All Buyers:</h3>
@@ -33,7 +38,6 @@ const AllBuyers = () => {
               <th>Serial no.</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Verify</th>
               <th>Delete</th>
             </tr>
           </thead>
@@ -43,9 +47,6 @@ const AllBuyers = () => {
                 <th>{i + 1}</th>
                 <th>{usr.name}</th>
                 <th>{usr.email}</th>
-                <th>
-                  <button className="btn btn-xs btn-error">Verify</button>
-                </th>
                 <th>
                   <button onClick={() => handleDelete(usr._id)} className="btn btn-xs btn-warning">Delete</button>
                 </th>

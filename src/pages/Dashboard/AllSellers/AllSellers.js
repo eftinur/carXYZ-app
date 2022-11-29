@@ -1,14 +1,15 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
+import Spinner from "../../../Spinner/Spinner";
 
 const AllSellers = () => {
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
       const res = await fetch("http://localhost:5000/users?type=seller", {
         headers: {
-          authorization: `bearer ${localStorage.getItem('accessToken')}`
-        }
+          authorization: `bearer ${localStorage.getItem("accessToken")}`,
+        },
       });
       const data = await res.json();
       return data;
@@ -16,8 +17,22 @@ const AllSellers = () => {
   });
   console.log(data);
 
-  if(isLoading) {
-    return <div className="text-center">Loading...</div>
+  const handleDelete = (usr) => {
+    fetch(`http://localhost:5000/users/${usr._id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+            alert('Deleted Successfully');
+            refetch();
+        }
+      });
+  };
+
+  if (isLoading) {
+    return <Spinner></Spinner>;
   }
   return (
     <div>
@@ -41,10 +56,10 @@ const AllSellers = () => {
                 <th>{usr.name}</th>
                 <th>{usr.email}</th>
                 <th>
-                  <button className="btn btn-xs btn-error">Warning</button>
+                  <button className="btn btn-xs btn-error">Verify</button>
                 </th>
                 <th>
-                  <button className="btn btn-xs btn-warning">Delete</button>
+                  <button onClick={() => handleDelete(usr._id)} className="btn btn-xs btn-warning">Delete</button>
                 </th>
               </tr>
             ))}
