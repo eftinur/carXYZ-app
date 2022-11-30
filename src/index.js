@@ -12,6 +12,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import 'react-day-picker/dist/style.css';
 
 const queryClient = new QueryClient();
 

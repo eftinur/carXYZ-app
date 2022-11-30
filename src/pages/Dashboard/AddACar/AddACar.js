@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import { format } from "date-fns";
 
 const AddACar = () => {
   const { user } = useContext(AuthContext);
@@ -9,24 +10,28 @@ const AddACar = () => {
     e.preventDefault();
 
     const carName = e.target.name.value;
-    const price = e.target.price.value;
+    const showroomPrice = e.target.showroomPrice.value;
+    const resalePrice = e.target.resalePrice.value;
     const phone = e.target.phone.value;
     const location = e.target.location.value;
     const year = e.target.year.value;
+    const carUsed = e.target.carUsed.value;
     const image = e.target.image.files[0];
     const condition = e.target.condition.value;
     const category = e.target.category.value.toLowerCase();
     const description = e.target.description.value;
+    const date =format(new Date(),'PPpp');
+    const status = 'unsold';
 
     console.log(
       carName,
-      price,
       phone,
       location,
       year,
       condition,
       category,
-      description
+      description, 
+      date
     );
 
     const formData = new FormData();
@@ -47,14 +52,19 @@ const AddACar = () => {
         const carData = {
           category: category,
           seller: user.displayName,
-          car: carName,
+          email: user.email,
+          name: carName,
           image: imageData.data.display_url,
-          price: price,
+          showroomPrice: showroomPrice,
+          resalePrice: resalePrice,
           phone: phone,
           year: year,
+          carUsed: carUsed,
           location: location,
           condition: condition,
+          date: date,
           description: description,
+          status: status
         };
 
         fetch("http://localhost:5000/cars", {
@@ -91,10 +101,23 @@ const AddACar = () => {
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Car price:</span>
+            <span className="label-text">Showroom price:</span>
           </label>
           <input
-            name="price"
+            name="showroomPrice"
+            type="text"
+            placeholder="Enter your car price"
+            className="input input-bordered"
+            required
+          />
+        </div>
+
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Resale price:</span>
+          </label>
+          <input
+            name="resalePrice"
             type="text"
             placeholder="Enter your car price"
             className="input input-bordered"
@@ -135,7 +158,18 @@ const AddACar = () => {
           <input
             name="year"
             type="text"
-            placeholder="Enter your email"
+            className="input input-bordered"
+            required
+          />
+        </div>
+
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Car used</span>
+          </label>
+          <input
+            name="carUsed"
+            type="number"
             className="input input-bordered"
             required
           />
@@ -175,6 +209,14 @@ const AddACar = () => {
             <option>Honda</option>
           </select>
         </div>
+        
+        {/* <div className="form-control">
+          <DayPicker
+          mode="single"
+          selected={selectedDate}
+          onSelect={setSelectedDate }
+          ></DayPicker>
+        </div> */}
 
         <div className="form-control">
           <label className="label">

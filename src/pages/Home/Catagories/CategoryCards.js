@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import Spinner from "../../../Spinner/Spinner";
 import BookingModal from "./BookingModal/BookingModal";
 import Cards from "./Cards";
 
@@ -18,6 +19,10 @@ const CategoryCards = () => {
       return data;
     },
   });
+
+  if(isLoading) {
+    return <Spinner></Spinner>
+  }
 
   return (
     <div className="min-h-screen">

@@ -13,16 +13,19 @@ const AllBuyers = () => {
   });
   console.log(data);
 
-  const handleDelete = (id) => {
-    fetch(`http://localhost:5000/users/${id}`, {
-      method: 'DELETE'
+  const handleDelete = (usr) => {
+    fetch(`http://localhost:5000/users/${usr._id}`, {
+      method: "DELETE",
     })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      refetch();
-    })
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+            alert('Deleted Successfully');
+            refetch();
+        }
+      });
+  };
 
   if(isLoading) {
     return <Spinner></Spinner>
@@ -48,7 +51,7 @@ const AllBuyers = () => {
                 <th>{usr.name}</th>
                 <th>{usr.email}</th>
                 <th>
-                  <button onClick={() => handleDelete(usr._id)} className="btn btn-xs btn-warning">Delete</button>
+                  <button onClick={() => handleDelete(usr)} className="btn btn-xs btn-warning">Delete</button>
                 </th>
               </tr>
             ))}
