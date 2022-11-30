@@ -6,11 +6,7 @@ const AllSellers = () => {
   const { data, isLoading, refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users?type=seller", {
-        headers: {
-          authorization: `bearer ${localStorage.getItem("accessToken")}`,
-        },
-      });
+      const res = await fetch("http://localhost:5000/users?type=seller");
       const data = await res.json();
       return data;
     },
@@ -59,7 +55,7 @@ const AllSellers = () => {
                   <button className="btn btn-xs btn-error">Verify</button>
                 </th>
                 <th>
-                  <button onClick={() => handleDelete(usr._id)} className="btn btn-xs btn-warning">Delete</button>
+                  <button onClick={() => handleDelete(usr)} className="btn btn-xs btn-warning">Delete</button>
                 </th>
               </tr>
             ))}

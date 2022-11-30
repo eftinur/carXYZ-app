@@ -1,20 +1,77 @@
-import React from "react";
+import React, { useContext } from "react";
+import toast from "react-hot-toast";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const AddACar = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const carName = e.target.name.value; 
-    const price = e.target.price.value; 
-    const phone = e.target.phone.value; 
-    const location = e.target.location.value; 
-    const year = e.target.year.value; 
-    const condition = e.target.condition.value; 
-    const category = (e.target.category.value).toLowerCase();; 
+    const carName = e.target.name.value;
+    const price = e.target.price.value;
+    const phone = e.target.phone.value;
+    const location = e.target.location.value;
+    const year = e.target.year.value;
+    const image = e.target.image.files[0];
+    const condition = e.target.condition.value;
+    const category = e.target.category.value.toLowerCase();
     const description = e.target.description.value;
-    
-    console.log(carName, price, phone, location, year, condition, category, description);
-  }
+
+    console.log(
+      carName,
+      price,
+      phone,
+      location,
+      year,
+      condition,
+      category,
+      description
+    );
+
+    const formData = new FormData();
+    formData.append("image", image);
+    console.log(formData);
+
+    // storing images on cloud
+    const imageHostKey = process.env.REACT_APP_imageHostKey;
+    console.log(imageHostKey);
+    const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imageData) => {
+        console.log(imageData);
+        const carData = {
+          category: category,
+          seller: user.displayName,
+          car: carName,
+          image: imageData.data.display_url,
+          price: price,
+          phone: phone,
+          year: year,
+          location: location,
+          condition: condition,
+          description: description,
+        };
+
+        fetch("http://localhost:5000/cars", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(carData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if(data.acknowledged) {
+              toast.success('Product added successfully')
+            }
+          });
+      });
+  };
   return (
     <div className="w-2/4">
       <h3 className="text-3xl">Add new car</h3>
@@ -81,6 +138,19 @@ const AddACar = () => {
             placeholder="Enter your email"
             className="input input-bordered"
             required
+          />
+        </div>
+
+        <div className="form-control mt-2">
+          <label htmlFor="image" className="block mb-2 text-sm">
+            Select Image:
+          </label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            className="input input-bordered pt-2"
           />
         </div>
 
