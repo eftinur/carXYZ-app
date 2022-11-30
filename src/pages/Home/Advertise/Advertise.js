@@ -6,7 +6,7 @@ import './Advertise.css';
 
 const Advertise = () => {
     const { user } = useContext(AuthContext);
-  const url = `http://localhost:5000/advertise?email=${user?.email}`;
+  const url = `https://buro-autos-serv-eftinur.vercel.app/advertise?email=${user?.email}`;
   const { data } = useQuery({
     queryKey: ["cars"],
     queryFn: async () => {

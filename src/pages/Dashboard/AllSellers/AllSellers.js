@@ -7,7 +7,7 @@ const AllSellers = () => {
   const { data, isLoading, refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users?type=seller");
+      const res = await fetch("https://buro-autos-serv-eftinur.vercel.app/users?type=seller");
       const data = await res.json();
       return data;
     },
@@ -15,7 +15,7 @@ const AllSellers = () => {
   console.log(data);
 
   const handleVerify = (usr) => {
-    fetch(`http://localhost:5000/users/${usr._id}`, {
+    fetch(`https://buro-autos-serv-eftinur.vercel.app/users/${usr._id}`, {
       method: 'PUT',
     })
     .then(res => res.json())
@@ -30,7 +30,7 @@ const AllSellers = () => {
 
   
   const handleDelete = (usr) => {
-    fetch(`http://localhost:5000/users/${usr._id}`, {
+    fetch(`https://buro-autos-serv-eftinur.vercel.app/users/${usr._id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

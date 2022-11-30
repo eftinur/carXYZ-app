@@ -7,7 +7,7 @@ const Cards = ({ car, setCar }) => {
   const { user } = useContext(AuthContext);
   const [CurrentUser, setCurrentUser] = useState(null);
   useEffect( () => {
-    fetch(`http://localhost:5000/user?email=${user?.email}`)
+    fetch(`https://buro-autos-serv-eftinur.vercel.app/user?email=${user?.email}`)
     .then(res => res.json())
     .then(data => {
       console.log(data);

@@ -5,7 +5,7 @@ import axios from "axios";
 const Categories = () => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/categories").then((data) => {
+    axios.get("https://buro-autos-serv-eftinur.vercel.app/categories").then((data) => {
       setCategories(data.data);
     });
   }, []);

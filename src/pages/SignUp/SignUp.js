@@ -65,7 +65,7 @@ const SignUp = () => {
 
   const saveUserInDB = (name, email, accountType) => {
     const user = { name, email, accountType };
-    fetch('http://localhost:5000/users', {
+    fetch('https://buro-autos-serv-eftinur.vercel.app/users', {
       method: 'POST',
       headers: {
         "content-type": "application/json"
@@ -81,7 +81,7 @@ const SignUp = () => {
   }
   
   const getUserToken = (email) => {
-    fetch(`http://localhost:5000/token?email=${email}`)
+    fetch(`https://buro-autos-serv-eftinur.vercel.app/token?email=${email}`)
     .then((res) => res.json())
     .then((data) => {
       if (data.accessToken) {

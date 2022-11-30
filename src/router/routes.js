@@ -32,7 +32,7 @@ const router = createBrowserRouter([
                 path: '/categories/:category',
                 element: <PrivateRoute><CategoryCards /></PrivateRoute>,
                 loader: ({params}) => {
-                    return fetch(`http://localhost:5000/categories/${params.category}`)
+                    return fetch(`https://buro-autos-serv-eftinur.vercel.app/categories/${params.category}`)
                 }
             },
             {

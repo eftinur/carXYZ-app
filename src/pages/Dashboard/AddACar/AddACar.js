@@ -67,7 +67,7 @@ const AddACar = () => {
           status: status
         };
 
-        fetch("http://localhost:5000/cars", {
+        fetch("https://buro-autos-serv-eftinur.vercel.app/cars", {
           method: "POST",
           headers: {
             "content-type": "application/json",

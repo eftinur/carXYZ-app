@@ -10,7 +10,7 @@ const CategoryCards = () => {
   const [car, setCar] = useState(null);
 
 
-  const url = `http://localhost:5000/cars?category=${category.category}`;
+  const url = `https://buro-autos-serv-eftinur.vercel.app/cars?category=${category.category}`;
   const { data: cars = [], isLoading } = useQuery({
     queryKey: ["cars", category?.category],
     queryFn: async () => {

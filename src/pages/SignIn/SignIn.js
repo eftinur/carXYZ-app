@@ -103,7 +103,7 @@ const SignIn = () => {
 
   const saveUseInDB = (name, email, accountType) => {
     const user = { name, email, accountType };
-    fetch("http://localhost:5000/users", {
+    fetch("https://buro-autos-serv-eftinur.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",

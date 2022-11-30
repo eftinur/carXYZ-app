@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 const MyProducts = () => {
   const { user } = useContext(AuthContext);
 
-  const url = `http://localhost:5000/carseller?email=${user?.email}`;
+  const url = `https://buro-autos-serv-eftinur.vercel.app/carseller?email=${user?.email}`;
   const { data: cars = [], isLoading, refetch } = useQuery({
     queryKey: ["cars", user?.email],
     queryFn: async () => {
@@ -18,7 +18,7 @@ const MyProducts = () => {
   });
 
   const handleDelete = (car) => {
-    fetch(`http://localhost:5000/cars/${car._id}`, {
+    fetch(`https://buro-autos-serv-eftinur.vercel.app/cars/${car._id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -33,7 +33,7 @@ const MyProducts = () => {
 
   const handleAdvertise = (car) => {
     const advertisedCar = car;
-    fetch("http://localhost:5000/advertise", {
+    fetch("https://buro-autos-serv-eftinur.vercel.app/advertise", {
           method: "POST",
           headers: {
             "content-type": "application/json",
