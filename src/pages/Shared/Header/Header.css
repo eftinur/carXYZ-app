@@ -2,7 +2,7 @@
     font-family: 'Exo 2', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    color: #fff;
+    color: rgb(227, 227, 227);
     text-transform: capitalize;
 }
 
@@ -20,7 +20,6 @@
 
 .header__logo {
     font-family: 'Krona One', sans-serif;
-    font-size: 24px;
     font-weight: 400;
     color: #fff;
     letter-spacing: 4px;

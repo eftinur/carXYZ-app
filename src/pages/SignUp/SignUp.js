@@ -91,12 +91,12 @@ const SignUp = () => {
   }
 
   return (
-    <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col  sm:w-3/4 md:w-2/4 lg:w-2/4 xl:w-1/4">
-        <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold register-title">register here</h1>
+    <div className="hero min-h-screen bg-base-200 mx-auto">
+      <div className="hero-content flex-col w-2/4 lg:w-2/4 xl:w-3/4 mx-auto">
+        <div className="text-center">
+          <h1 className="text-2xl md:text-5xl font-bold register-title">register here</h1>
         </div>
-        <div className="card w-full shadow-2xl bg-base-100">
+        <div className="card shadow-2xl bg-base-100">
           <form onSubmit={handleSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -111,7 +111,7 @@ const SignUp = () => {
               />
             </div>
 
-            <div>
+            <div className="form-control">
               <label htmlFor="image" className="block mb-2 text-sm">
                 Select Image:
               </label>

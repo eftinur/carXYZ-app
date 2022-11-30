@@ -83,7 +83,7 @@ const AddACar = () => {
       });
   };
   return (
-    <div className="w-2/4">
+    <div className="w-full lg:w-2/4">
       <h3 className="text-3xl">Add new car</h3>
       <form onSubmit={handleSubmit}>
         <div className="form-control">

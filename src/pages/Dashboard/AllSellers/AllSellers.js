@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../../Spinner/Spinner";
+import toast from "react-hot-toast";
 
 const AllSellers = () => {
   const { data, isLoading, refetch } = useQuery({
@@ -13,6 +14,21 @@ const AllSellers = () => {
   });
   console.log(data);
 
+  const handleVerify = (usr) => {
+    fetch(`http://localhost:5000/users/${usr._id}`, {
+      method: 'PUT',
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      if(data.modifiedCount > 0) {
+        toast.success('Verified Successfully');
+        refetch();
+      }
+    })
+  }
+
+  
   const handleDelete = (usr) => {
     fetch(`http://localhost:5000/users/${usr._id}`, {
       method: "DELETE",
@@ -52,7 +68,7 @@ const AllSellers = () => {
                 <th>{usr.name}</th>
                 <th>{usr.email}</th>
                 <th>
-                  <button className="btn btn-xs btn-error">Verify</button>
+                  <button onClick={() => handleVerify(usr)} className="btn btn-xs btn-error">Verify</button>
                 </th>
                 <th>
                   <button onClick={() => handleDelete(usr)} className="btn btn-xs btn-warning">Delete</button>

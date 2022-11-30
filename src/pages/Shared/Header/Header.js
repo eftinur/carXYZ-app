@@ -50,7 +50,7 @@ const Header = () => {
   
   return (
     <div className="navbar bg-slate-700">
-      <div className="container mx-auto justify-between  px-6">
+      <div className="w-3/4 mx-auto justify-between  px-6">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -71,12 +71,12 @@ const Header = () => {
             </label>
             <ul
               tabIndex={1}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-slate-700 rounded-box w-52"
             >
               {menuItems}
             </ul>
           </div>
-          <span className="header__logo">Car Carriage</span>
+          <span className="header__logo text-xs md:text-sm">Car Carriage</span>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{menuItems}</ul>

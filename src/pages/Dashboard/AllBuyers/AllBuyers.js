@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../../Spinner/Spinner";
+import toast from "react-hot-toast";
 
 const AllBuyers = () => {
   const { data, refetch, isLoading } = useQuery({
@@ -35,7 +36,7 @@ const AllBuyers = () => {
       <h3 className="text-3xl">All Buyers:</h3>
 
       <div className="overflow-x-auto mt-6">
-        <table className="table w-full">
+        <table className="table w-full table-auto">
           <thead>
             <tr>
               <th>Serial no.</th>

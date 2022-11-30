@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div className='grid grid-cols-1 gap-6 container mx-auto'>
+        <div className='grid grid-cols-1 gap-6 w-3/4 mx-auto'>
              <h2 className='text-3xl'>Our Blogs:</h2>
             <div className='border border-solid rounded-lg my-3 p-4'>
                 <h3 className='text-2xl'>What are the different ways to manage a state in a React application?</h3>

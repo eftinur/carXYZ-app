@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../../Spinner/Spinner";
+import toast from "react-hot-toast";
 
 const MyProducts = () => {
   const { user } = useContext(AuthContext);
@@ -29,6 +30,25 @@ const MyProducts = () => {
         }
       });
   };
+
+  const handleAdvertise = (car) => {
+    const advertisedCar = car;
+    fetch("http://localhost:5000/advertise", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(advertisedCar),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if(data.acknowledged) {
+              console.log(data);
+              toast.success('Product advertise successful')
+            }
+          });
+
+  }
 
 
   if(isLoading) {
@@ -59,7 +79,7 @@ const MyProducts = () => {
                 <th>{car.resalePrice}</th>
                 <th>{car.status}</th>
                 <th>
-                  <button className="btn btn-xs btn-warning">Advertise</button>
+                  <button onClick={() => handleAdvertise(car)} className="btn btn-xs btn-warning">Advertise</button>
                 </th>
                 <th>
                   <button onClick={() => handleDelete(car)} className="btn btn-xs btn-warning">Delete</button>

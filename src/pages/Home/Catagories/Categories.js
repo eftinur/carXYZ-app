@@ -11,13 +11,13 @@ const Categories = () => {
   }, []);
 
   return (
-    <section className="container mx-auto my-28">
-      <div className="flex justify-start flex-wrap">
-        <h4>Pick Your category:</h4>
+    <section className="w-3/4 mx-auto my-28">
+      <h4>Pick Your category:</h4>
+      <div className="flex justify-start flex-wrap py-4">
         {categories.map((category) => (
           <button
             key={category._id}
-            className="btn btn-primary btn-outline mx-8"
+            className="btn btn-primary btn-outline m-5"
           >
             <Link to={`/categories/${category.category}`}>
               {category.category}
