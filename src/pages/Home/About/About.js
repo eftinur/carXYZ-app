@@ -17,7 +17,7 @@ const About = () => {
         </div>
         <div className="">
             <h3>Our History</h3>
-            <p>Car Carriage is owned by OzCar Connect Pty Ltd. Our website www.Car Carriage advertises private vehicles and vehicles owned by OzCar PTY LTD which is a licensed motor dealer. OzCar LMCT 11839. Private vehicles listed for sale on this website are not part of and are not guaranteed by OzCar PTY LTD, they are listed for sale by a private 3rd party. *All Finance Subject to Approved Purchasers. ^^Terms and conditions apply. All sales and promotions are excluded from Muswellbrook Dealership.</p>
+            <p>carXYZ is owned by OzCar Connect Pty Ltd. Our website www.carXYZ advertises private vehicles and vehicles owned by OzCar PTY LTD which is a licensed motor dealer. OzCar LMCT 11839. Private vehicles listed for sale on this website are not part of and are not guaranteed by OzCar PTY LTD, they are listed for sale by a private 3rd party. *All Finance Subject to Approved Purchasers. ^^Terms and conditions apply. All sales and promotions are excluded from Muswellbrook Dealership.</p>
         </div>
       </div>
     </div>

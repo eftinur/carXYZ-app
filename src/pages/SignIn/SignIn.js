@@ -22,7 +22,7 @@ const SignIn = () => {
         const user = result.user;
         console.log(user);
         navigate(from, { replace: true });
-        toast.success("Welcome to Car Carriage");
+        toast.success("Welcome to carXYZ");
       })
       .catch((err) => {
         console.log(err);
@@ -40,7 +40,7 @@ const SignIn = () => {
         console.log(user);
         navigate(from, { replace: true });
         saveUseInDB(user?.displayName, user?.email, accountType);
-        toast.success("Welcome to Car Carriage");
+        toast.success("Welcome to carXYZ");
       })
       .catch((err) => {
         console.log(err);

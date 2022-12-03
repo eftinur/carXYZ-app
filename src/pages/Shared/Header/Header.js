@@ -76,7 +76,7 @@ const Header = () => {
               {menuItems}
             </ul>
           </div>
-          <span className="header__logo text-xs md:text-sm">Car Carriage</span>
+          <span className="header__logo text-xs md:text-sm">carXYZ</span>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{menuItems}</ul>

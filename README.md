@@ -1,5 +1,5 @@
 # Project Brief
-"Car Carriage" is an e-commerce site for cars, which is primarily used for "RBuying and selling second hand cars"
+"carXYZ" is an e-commerce site for cars, which is primarily used for "RBuying and selling second hand cars"
 
 ## Features
 -  Authentication - Register/Login by email password and Google. 
